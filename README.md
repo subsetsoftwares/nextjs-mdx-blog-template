@@ -1,40 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# NextJs MDX Blog Template
+
+## How this repo is created
+
+```sh
+npx create-next-app@latest --ts
+```
+
+- What is your project named? `nextjs-mdx-blog-template`
+- Would you like to use ESLint? `Yes`
+- Would you like to use Tailwind CSS? `No`
+- Would you like to use `src/` directory? `No`
+- Would you like to use App Router? (recommended) `No`
+- Would you like to customize the default import alias (@/\*)? `No`
 
 ## Getting Started
 
-First, run the development server:
+Install packages needed to render MDX:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```sh
+npm install @next/mdx @mdx-js/loader @mdx-js/react @types/mdx
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Update the next.config.js file at your project's root to configure it to use MDX:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```js
+// next.config.js
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+const withMDX = require("@next/mdx")();
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  // Configure `pageExtensions` to include MDX files
+  pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
+  // Optionally, add any other Next.js config below
+};
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+module.exports = withMDX(nextConfig);
+```
 
-## Learn More
+Then, create a new MDX page within the /pages directory:
 
-To learn more about Next.js, take a look at the following resources:
+```
+your-project
+  ├── pages
+  │   └── my-mdx-page.mdx
+  └── package.json
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Reference
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- https://nextjs.org/docs/pages/building-your-application/configuring/mdx
