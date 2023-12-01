@@ -1,6 +1,23 @@
 # NextJs MDX Blog Template
 
-## How this repo is created
+## Getting Started
+
+Create a new MDX page within the `/articles` directory:
+
+```
+your-project
+  ├── articles
+  │   └── 2023
+  │       └── article-one.mdx
+  │   └── 2023
+  │       └── article-two.mdx
+  │   └── top-level.mdx
+  └── package.json
+```
+
+All articles, top level or nested within sub-directories will be exposed as a flat list through api endpoint `/api/articles`.
+
+## How this repo was created
 
 ```sh
 npx create-next-app@latest --ts
@@ -12,8 +29,6 @@ npx create-next-app@latest --ts
 - Would you like to use `src/` directory? `No`
 - Would you like to use App Router? (recommended) `No`
 - Would you like to customize the default import alias (@/\*)? `No`
-
-## Getting Started
 
 Install packages needed to render MDX:
 
@@ -38,13 +53,10 @@ const nextConfig = {
 module.exports = withMDX(nextConfig);
 ```
 
-Then, create a new MDX page within the /pages directory:
+Then to read meta data information from the mdx files, we use `gray-matter` npm package.
 
-```
-your-project
-  ├── pages
-  │   └── my-mdx-page.mdx
-  └── package.json
+```sh
+npm install gray-matter
 ```
 
 ## Reference
