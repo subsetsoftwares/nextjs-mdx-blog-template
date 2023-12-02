@@ -1,7 +1,7 @@
 import Cards from "@/components/Cards";
-import Center from "@/components/Center";
 import Head from "@/components/Head";
 import Header from "@/components/Header";
+import HeroBanner from "@/components/HeroBanner";
 import { Inter } from "next/font/google";
 import React from "react";
 
@@ -19,7 +19,7 @@ const Home: React.FC = ({ articles }: any) => {
       <Head />
       <main>
         <Header />
-        <Center />
+        <HeroBanner />
         <Cards cards={articles} />
       </main>
     </>
