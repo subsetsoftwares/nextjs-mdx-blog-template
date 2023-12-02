@@ -18,7 +18,7 @@
 
 .right-section {
   flex: 2;
-  background-color: #78b3a6;
+  background-color: var(--background-color-panel);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -53,11 +53,11 @@
 @media (max-width: 700px) {
   .hero-banner {
     display: block;
-    background-color: #78b3a6;
+    background-color: var(--background-color-panel);
   }
 
   .left-section {
-    background-color: #78b3a6;
+    background-color: var(--background-color-panel);
     padding: 36px;
   }
 

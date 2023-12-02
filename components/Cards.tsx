@@ -15,6 +15,7 @@ const Cards = ({ cards, title }: { cards: Article[]; title: string }) => {
             href={getBlogUrl(card.slug)}
             title={card.meta.title}
             description={card.meta.description}
+            publishedAt={card.meta.publishedDate}
           />
         ))}
       </div>

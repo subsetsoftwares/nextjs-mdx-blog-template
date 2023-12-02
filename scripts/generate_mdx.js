@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const numberToWords = require("number-to-words");
 
 function generateRandomDate() {
   const startDate = new Date("2022-01-01");
@@ -20,10 +21,21 @@ function generateRandomDate() {
   return formattedDate;
 }
 
+function up(word) {
+  // Capitalize first letter
+  return word.charAt(0).toUpperCase() + word.slice(1);
+}
+
 function createMDXFile(outputDir, index) {
-  const filename = path.join(outputDir, `article_${index}.mdx`);
-  const title = `Article ${index}`;
-  const description = `Here is the summary of Article ${index}`;
+  const number = numberToWords.toWords(index);
+  const word = number
+    .split("-")
+    .map((text) => up(text))
+    .join(" ");
+  const slug = number.split(" ").join("-").toLowerCase();
+  const filename = path.join(outputDir, `article-${slug}.mdx`);
+  const title = `Article ${word}`;
+  const description = `Here is the summary of Article ${word}`;
   const publishedDate = generateRandomDate();
 
   const mdxContent = [

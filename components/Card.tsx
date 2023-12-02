@@ -6,13 +6,16 @@ interface CardProps {
   href: string;
   title: string;
   description: string;
+  publishedAt: string;
 }
 
-const Card: React.FC<CardProps> = ({ href, title, description }) => {
+const Card: React.FC<CardProps> = (props) => {
+  const { href, title, description, publishedAt } = props;
   return (
     <Link className="card" href={href}>
       <h2 className="title">{title}</h2>
       <p className="description">{description}</p>
+      <p className="published">{publishedAt}</p>
     </Link>
   );
 };
