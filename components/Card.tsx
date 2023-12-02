@@ -1,5 +1,6 @@
-import styles from "@/styles/Home.module.css";
+import Link from "next/link";
 import React from "react";
+import "./Card.scss";
 
 interface CardProps {
   href: string;
@@ -9,17 +10,10 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ href, title, description }) => {
   return (
-    <a
-      href={href}
-      className={styles.card}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <h2>
-        {title} <span>-&gt;</span>
-      </h2>
-      <p>{description}</p>
-    </a>
+    <Link className="card" href={href}>
+      <h2 className="title">{title}</h2>
+      <p className="description">{description}</p>
+    </Link>
   );
 };
 

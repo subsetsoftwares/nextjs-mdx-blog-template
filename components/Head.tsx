@@ -1,7 +1,7 @@
 import NextHead from "next/head";
 import React from "react";
 
-const Header: React.FC = () => {
+const Head: React.FC = () => {
   return (
     <NextHead>
       <title>Create Next App</title>
@@ -12,4 +12,4 @@ const Header: React.FC = () => {
   );
 };
 
-export default Header;
+export default Head;

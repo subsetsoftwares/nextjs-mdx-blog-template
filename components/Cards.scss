@@ -1,0 +1,15 @@
+.cards {
+  padding-bottom: 2rem;
+  .section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 320px);
+    justify-content: center;
+    gap: 1rem;
+  }
+  .section-title {
+    color: var(--section-title-color);
+    padding: 2.5rem 0 2rem;
+    font-size: 2rem;
+    text-align: center;
+  }
+}

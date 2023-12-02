@@ -1,20 +1,24 @@
 import { getBlogUrl } from "@/helpers/getBlogUrl";
-import styles from "@/styles/Home.module.css";
 import { Article } from "@/types/article";
+import BackgroundCheck from "./BackgroundCheck";
 import Card from "./Card";
+import "./Cards.scss";
 
-const Cards = ({ cards }: { cards: Article[] }) => {
+const Cards = ({ cards, title }: { cards: Article[]; title: string }) => {
   return (
-    <div className={styles.grid}>
-      {cards.map((card) => (
-        <Card
-          key={card.slug}
-          href={getBlogUrl(card.slug)}
-          title={card.meta.title}
-          description={card.meta.description}
-        />
-      ))}
-    </div>
+    <BackgroundCheck className="cards">
+      <h2 className="section-title">{title}</h2>
+      <div className="section">
+        {cards.map((card) => (
+          <Card
+            key={card.slug}
+            href={getBlogUrl(card.slug)}
+            title={card.meta.title}
+            description={card.meta.description}
+          />
+        ))}
+      </div>
+    </BackgroundCheck>
   );
 };
 

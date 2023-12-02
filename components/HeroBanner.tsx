@@ -5,7 +5,7 @@ import "./HeroBanner.scss";
 
 const HeroBanner: React.FC = () => {
   return (
-    <div className="center-container">
+    <div className="hero-banner">
       <div className="left-section">
         <Image
           className="logo"

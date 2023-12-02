@@ -5,8 +5,13 @@
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
-  --foreground-rgb: 0, 0, 0;
   --header-panel-height: 76px;
+
+  --h2-title-color: #555555;
+  --h3-title-color: #444444;
+
+  --section-title-color: var(--h2-title-color);
+  --card-title-color: var(--h3-title-color);
 }
 
 @media (prefers-color-scheme: dark) {
