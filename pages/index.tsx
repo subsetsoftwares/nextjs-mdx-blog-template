@@ -1,8 +1,7 @@
 import Cards from "@/components/Cards";
 import Center from "@/components/Center";
-import Description from "@/components/Description";
+import Head from "@/components/Head";
 import Header from "@/components/Header";
-import styles from "@/styles/Home.module.css";
 import { Inter } from "next/font/google";
 import React from "react";
 
@@ -17,9 +16,9 @@ export async function getStaticProps() {
 const Home: React.FC = ({ articles }: any) => {
   return (
     <>
-      <Header />
-      <main className={`${styles.main} ${inter.className}`}>
-        <Description />
+      <Head />
+      <main>
+        <Header />
         <Center />
         <Cards cards={articles} />
       </main>
