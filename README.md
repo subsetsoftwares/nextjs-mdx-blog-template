@@ -59,6 +59,18 @@ Then to read meta data information from the mdx files, we use `gray-matter` npm 
 npm install gray-matter
 ```
 
+## Generating dummy mdx files
+
+Usage: `node ./scripts/generate_mdx.js <output_directory> <number_of_files> [starting_index]`
+
+```sh
+node ./scripts/generate_mdx.js articles/2023 100
+
+node ./scripts/generate_mdx.js articles/2024 100 101
+```
+
+NOTE: Last argument is for number starting index.
+
 ## Reference
 
 - https://nextjs.org/docs/pages/building-your-application/configuring/mdx
