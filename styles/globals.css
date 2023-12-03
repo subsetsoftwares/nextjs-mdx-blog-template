@@ -14,6 +14,8 @@
   --background-color-card: rgb(167 243 208); /* emerald 200 */
   --background-color-card-hover: rgb(209 250 229); /* emerald 100 */
 
+  --border-color-tags: rgb(52 211 153); /* emerald 400 */
+
   --section-title-color: var(--h2-title-color);
   --card-title-color: var(--h3-title-color);
 }
@@ -39,4 +41,12 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+/* common */
+.section-title {
+  color: var(--section-title-color);
+  padding: 2.5rem 0 2rem;
+  font-size: 2rem;
+  text-align: center;
 }

@@ -4,7 +4,6 @@ import { ARTICLES_DIRECTORY, RECENT_ARTICLES_COUNT } from "@/utility/constants";
 
 export async function GET() {
   const articles = await getArticles(ARTICLES_DIRECTORY);
-  return Response.json({
-    articles: getRecentArticles(articles, RECENT_ARTICLES_COUNT),
-  });
+  const recent = getRecentArticles(articles, RECENT_ARTICLES_COUNT);
+  return Response.json({ recent });
 }

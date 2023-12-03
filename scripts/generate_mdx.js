@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const numberToWords = require("number-to-words");
 
-function up(word) {
+function capitalize(word) {
   // Capitalize first letter
   return word.charAt(0).toUpperCase() + word.slice(1);
 }
@@ -63,7 +63,7 @@ function createMDXFile(outputDir, index) {
   const number = numberToWords.toWords(index);
   const word = number
     .split("-")
-    .map((text) => up(text))
+    .map((text) => capitalize(text))
     .join(" ");
   const slug = number.split(" ").join("-").toLowerCase();
   const filename = path.join(outputDir, `article-${slug}.mdx`);
