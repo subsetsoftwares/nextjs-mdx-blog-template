@@ -1,8 +1,6 @@
 import BigBlock from "@/components/BigBlock";
 import Cards from "@/components/Cards";
-import Footer from "@/components/Footer";
 import Head from "@/components/Head";
-import Header from "@/components/Header";
 import HeroBanner from "@/components/HeroBanner";
 import Tags from "@/components/Tags";
 import { QUOTE_SOLVE } from "@/utility/constants";
@@ -33,12 +31,10 @@ const Home: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
     <>
       <Head />
       <main>
-        <Header />
         <HeroBanner />
         <Cards title="Recent Articles" cards={articles.recent} />
         <Tags title="Popular Tags" tags={tags.popular} />
         <BigBlock quote={QUOTE_SOLVE} />
-        <Footer />
       </main>
     </>
   );

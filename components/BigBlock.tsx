@@ -1,4 +1,4 @@
-import { PAGE_ARTICLES_ALL } from "@/utility/urls";
+import { PAGE_ARTICLES_INDEX } from "@/utility/urls";
 import Link from "next/link";
 import React from "react";
 import "./BigBlock.scss";
@@ -15,7 +15,7 @@ const BigBlock: React.FC<Props> = ({ quote }) => {
         <h4 className="sub-title">
           Here we have few articles about what we have learnt
         </h4>
-        <Link className="view-all" href={PAGE_ARTICLES_ALL}>
+        <Link className="view-all" href={PAGE_ARTICLES_INDEX}>
           View All
         </Link>
       </div>
