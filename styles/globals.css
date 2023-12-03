@@ -13,9 +13,11 @@
   --background-color-panel: rgb(4 120 87); /* emerald 700 */
   --background-color-card: rgb(167 243 208); /* emerald 200 */
   --background-color-card-hover: rgb(209 250 229); /* emerald 100 */
+  --background-color-amber-100: rgb(254, 243, 199); /* amber */
 
   --border-color-tags: rgb(52 211 153); /* emerald 400 */
 
+  --text-color-secondary-800: rgb(146 64 14);
   --section-title-color: var(--h2-title-color);
   --card-title-color: var(--h3-title-color);
 }
