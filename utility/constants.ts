@@ -10,3 +10,4 @@ export const LOREM_EPSUM =
 
 export const QUOTE_SOLVE =
   "There is always someone trying to solve what you already have";
+export const QUOTE_KNOWLEDGE_SHARING = "Knowledge grows only when its shared";

@@ -1,0 +1,45 @@
+.footer {
+  background-color: #000;
+  color: #fff;
+  height: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+
+  .section:first-child {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+
+    .gray-tagline {
+      color: #808080;
+      font-size: 2.2rem;
+    }
+  }
+
+  .section:last-child {
+    text-align: right;
+
+    .links {
+      margin-bottom: 1rem;
+
+      .link {
+        color: white;
+        text-decoration: none;
+        padding: 0 0.5rem;
+        border-right: 1px solid white;
+      }
+
+      .link:last-child {
+        border-right: none;
+        padding-right: 0;
+      }
+    }
+
+    .made-in-india {
+      color: #bdbbbb;
+      font-size: 1.1rem;
+    }
+  }
+}

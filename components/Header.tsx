@@ -1,5 +1,11 @@
 import { LOGO_URL } from "@/utility/constants";
+import {
+  PAGE_ABOUT,
+  PAGE_ARTICLES_ALL,
+  PAGE_PROJECTS_ALL,
+} from "@/utility/urls";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import "./Header.scss";
 
@@ -16,12 +22,17 @@ const Header: React.FC = () => {
         />
         <h1 className="title">Subset Softwares</h1>
       </div>
-      <div className="options">
-        <ul>
-          <li>Projects</li>
-          <li>Blog</li>
-          <li>About</li>
-        </ul>
+
+      <div className="links">
+        <Link className="link" href={PAGE_PROJECTS_ALL}>
+          Projects
+        </Link>
+        <Link className="link" href={PAGE_ARTICLES_ALL}>
+          Articles
+        </Link>
+        <Link className="link" href={PAGE_ABOUT}>
+          About
+        </Link>
       </div>
     </div>
   );

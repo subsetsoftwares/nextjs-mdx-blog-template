@@ -22,17 +22,10 @@
     }
   }
 
-  .options {
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-
-      li {
-        margin-left: 20px;
-        cursor: pointer;
-      }
+  .links {
+    .link {
+      margin-left: 20px;
+      cursor: pointer;
     }
   }
 
