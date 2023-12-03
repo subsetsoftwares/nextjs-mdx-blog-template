@@ -13,7 +13,7 @@ const Card: React.FC<CardProps> = (props) => {
   const { href, title, description, publishedAt } = props;
   return (
     <Link className="card" href={href}>
-      <h2 className="title">{title}</h2>
+      <h3 className="title">{title}</h3>
       <p className="description">{description}</p>
       <p className="published">{publishedAt}</p>
     </Link>

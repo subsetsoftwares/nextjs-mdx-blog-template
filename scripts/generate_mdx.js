@@ -2,6 +2,11 @@ const fs = require("fs");
 const path = require("path");
 const numberToWords = require("number-to-words");
 
+function up(word) {
+  // Capitalize first letter
+  return word.charAt(0).toUpperCase() + word.slice(1);
+}
+
 function generateRandomDate() {
   const startDate = new Date("2022-01-01");
   const endDate = new Date("2023-12-31");
@@ -21,9 +26,37 @@ function generateRandomDate() {
   return formattedDate;
 }
 
-function up(word) {
-  // Capitalize first letter
-  return word.charAt(0).toUpperCase() + word.slice(1);
+function generateRandomTags() {
+  const technologies = [
+    "nextjs",
+    "tailwind",
+    "css",
+    "reactjs",
+    "typescript",
+    "graphql",
+    "storybook",
+    "jest",
+    "webpack",
+    "playwright",
+    "javascript",
+    "nodejs",
+    "frontend",
+    "web-development",
+    "backend-for-frontend",
+    "micro-frontend",
+    "scripting",
+    "automation",
+  ];
+  // Random number between 3 and 5
+  const numTags = Math.floor(Math.random() * 3) + 3;
+  const selectedTags = [];
+
+  for (let i = 0; i < numTags; i++) {
+    const randomIndex = Math.floor(Math.random() * technologies.length);
+    selectedTags.push(technologies[randomIndex]);
+  }
+
+  return selectedTags.join(", ");
 }
 
 function createMDXFile(outputDir, index) {
@@ -37,12 +70,14 @@ function createMDXFile(outputDir, index) {
   const title = `Article ${word}`;
   const description = `Here is the summary of Article ${word}`;
   const publishedDate = generateRandomDate();
+  const tags = generateRandomTags();
 
   const mdxContent = [
     "---",
     "title: " + title,
     "description: " + description,
     "publishedDate: " + publishedDate,
+    "tags: " + tags,
     "---",
     "",
     "# " + title,
