@@ -1,0 +1,68 @@
+.about-banner {
+  display: flex;
+  height: calc(100vh - var(--header-panel-height) - 150px);
+
+  .left-section {
+    flex: 1;
+    background-color: var(--background-color-gray-300);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .info-image {
+      width: 150px;
+      height: auto;
+    }
+  }
+
+  .right-section {
+    flex: 2;
+    background-color: var(--background-color-panel);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .content {
+      text-align: center;
+      color: #ffffff;
+
+      .hello-world {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+
+      .what-we-do {
+        font-size: 1.1rem;
+        width: 400px;
+      }
+
+      h2 {
+        margin: 10px 0;
+        font-size: 4.5rem;
+      }
+
+      p {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .hero-banner {
+    display: block;
+    background-color: var(--background-color-panel);
+    height: calc(100vh - var(--header-panel-height));
+
+    .left-section {
+      background-color: var(--background-color-panel);
+      padding: 36px;
+    }
+
+    .right-section {
+      padding: 36px;
+    }
+  }
+}

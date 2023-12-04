@@ -1,0 +1,27 @@
+.articles {
+  background-color: var(--background-color-gray-300);
+  padding: 1rem;
+  .article {
+    margin: 2rem 1rem;
+    .date-column {
+      background-color: white;
+      border: 1px solid var(--border-color-gray-500);
+      border-bottom: none;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+      display: inline-block;
+      padding: 8px 12px;
+    }
+    .details-column {
+      background-color: white;
+      border: 1px solid var(--border-color-gray-500);
+      padding: 1rem;
+      .description {
+        padding: 0.5rem 0;
+      }
+      .read-more {
+        color: var(--text-color-emerald-700);
+      }
+    }
+  }
+}

@@ -1,4 +1,7 @@
+import Articles from "@/components/Articles";
 import Head from "@/components/Head";
+import Pagination from "@/components/Pagination";
+import { ArticlesPageResult } from "@/types/article";
 import { ARTICLES_PAGE_LIMIT } from "@/utility/constants";
 import { API_ARTICLES_ALL } from "@/utility/urls";
 import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
@@ -26,22 +29,23 @@ export async function getStaticProps(context: GetStaticPropsContext) {
   const { page } = params;
   const apiUrl = `${API_ARTICLES_ALL}?page=${page}&limit=${ARTICLES_PAGE_LIMIT}`;
   const response = await fetch(apiUrl);
-  const articles = await response.json();
+  const articlesPageResult: ArticlesPageResult = await response.json();
 
   return {
     props: {
-      articles,
+      articlesPageResult,
     },
   };
 }
 
 const Home: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
-  articles,
+  articlesPageResult,
 }) => {
   return (
     <>
       <Head />
-      <main>{JSON.stringify(articles, null, 2)}</main>
+      <Articles articles={articlesPageResult.articles} />
+      <Pagination totalPages={articlesPageResult.totalPages} />
     </>
   );
 };

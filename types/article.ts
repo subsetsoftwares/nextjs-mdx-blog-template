@@ -12,3 +12,10 @@ const article = {
 export type Article = typeof article;
 
 export type MetaData = Article["meta"];
+
+export type ArticlesPageResult = {
+  articles: Article[];
+  page: number;
+  limit: number;
+  totalPages: number;
+};

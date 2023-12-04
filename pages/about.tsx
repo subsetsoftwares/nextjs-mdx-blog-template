@@ -1,5 +1,8 @@
+import AboutBanner from "@/components/AboutBanner";
+import { ZEN_TEMPLE_URL } from "@/utility/constants";
+
 function AboutPage() {
-  return <h1>About Us</h1>;
+  return <AboutBanner imageUrl={ZEN_TEMPLE_URL} />;
 }
 
 export default AboutPage;

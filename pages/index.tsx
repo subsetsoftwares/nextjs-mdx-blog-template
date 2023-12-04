@@ -1,9 +1,9 @@
+import AboutBanner from "@/components/AboutBanner";
 import BigBlock from "@/components/BigBlock";
 import Cards from "@/components/Cards";
 import Head from "@/components/Head";
-import HeroBanner from "@/components/HeroBanner";
 import Tags from "@/components/Tags";
-import { QUOTE_SOLVE } from "@/utility/constants";
+import { QUOTE_SOLVE, ZEN_TEMPLE_LARGE_URL } from "@/utility/constants";
 import { API_ARTICLES_RECENT, API_TAGS_POPULAR } from "@/utility/urls";
 import { InferGetStaticPropsType } from "next";
 import React from "react";
@@ -31,7 +31,7 @@ const Home: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
     <>
       <Head />
       <main>
-        <HeroBanner />
+        <AboutBanner imageUrl={ZEN_TEMPLE_LARGE_URL} />
         <Cards title="Recent Articles" cards={articles.recent} />
         <Tags title="Popular Tags" tags={tags.popular} />
         <BigBlock quote={QUOTE_SOLVE} />

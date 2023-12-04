@@ -1,5 +1,7 @@
 .card {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 16px;
   border-radius: 8px;
   background-color: var(--background-color-card);
@@ -20,5 +22,9 @@
 
   .description {
     margin: 0;
+  }
+
+  .published {
+    margin-top: 0.2rem;
   }
 }

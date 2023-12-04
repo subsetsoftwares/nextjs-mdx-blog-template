@@ -1,0 +1,30 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: var(--background-color-gray-500);
+
+  .button {
+    border: 2px solid var(--border-color-gray-500);
+    background-color: white;
+    padding: 12px;
+    text-align: center;
+    width: 100px;
+
+    &:hover {
+      background-color: #007bff;
+      color: #fff;
+    }
+  }
+
+  .active {
+    background-color: #007bff;
+    color: #fff;
+  }
+
+  .disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+}

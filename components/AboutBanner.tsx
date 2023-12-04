@@ -1,15 +1,14 @@
-import { LOREM_EPSUM, ZEN_TEMPLE_URL } from "@/utility/constants";
+import { LOREM_EPSUM } from "@/utility/constants";
 import Image from "next/image";
-import React from "react";
-import "./HeroBanner.scss";
+import "./AboutBanner.scss";
 
-const HeroBanner: React.FC = () => {
+export default function AboutBanner({ imageUrl }: { imageUrl: string }) {
   return (
-    <div className="hero-banner">
+    <div className="about-banner">
       <div className="left-section">
         <Image
           className="logo"
-          src={ZEN_TEMPLE_URL}
+          src={imageUrl}
           alt="Company Logo"
           width={300}
           height={300}
@@ -24,6 +23,4 @@ const HeroBanner: React.FC = () => {
       </div>
     </div>
   );
-};
-
-export default HeroBanner;
+}
