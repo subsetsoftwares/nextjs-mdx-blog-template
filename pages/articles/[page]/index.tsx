@@ -44,7 +44,11 @@ const Home: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
   return (
     <>
       <Head />
-      <Articles articles={articlesPageResult.articles} />
+      <Articles
+        articles={articlesPageResult.articles}
+        title="All Articles"
+        pageNumber={articlesPageResult.page}
+      />
       <Pagination totalPages={articlesPageResult.totalPages} />
     </>
   );

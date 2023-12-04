@@ -4,7 +4,7 @@
   justify-content: space-between;
   padding: 16px;
   border-radius: 8px;
-  background-color: var(--background-color-card);
+  background-color: var(--background-color-emerald-200);
   border: 2px solid #406b5b;
   text-decoration: none;
   color: var(--card-title-color);
@@ -12,7 +12,7 @@
 
   &:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: var(--background-color-card-hover);
+    background-color: var(--background-color-emerald-100);
   }
 
   .title {
