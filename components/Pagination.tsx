@@ -20,13 +20,15 @@ export default function Pagination({ totalPages }: Props) {
     <div className="pagination">
       <Link
         href={`/articles/${currentPage - 1}`}
-        className={`button ${currentPage === 1 ? "disabled" : ""}`}
+        className={`button previous ${currentPage === 1 ? "disabled" : ""}`}
       >
         &lt; Previous
       </Link>
       <Link
         href={`/articles/${currentPage + 1}`}
-        className={`button ${currentPage === totalPages ? "disabled" : ""}`}
+        className={`button upcoming ${
+          currentPage === totalPages ? "disabled" : ""
+        }`}
       >
         Next &gt;
       </Link>

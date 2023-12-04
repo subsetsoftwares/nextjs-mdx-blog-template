@@ -33,7 +33,7 @@ const Home: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
       <main>
         <AboutBanner imageUrl={ZEN_TEMPLE_LARGE_URL} />
         <Cards title="Recent Articles" cards={articles.recent} />
-        <Tags title="Popular Tags" tags={tags.popular} />
+        <Tags title="Popular Tags" tags={tags.popular} showCount={true} />
         <BigBlock quote={QUOTE_SOLVE} />
       </main>
     </>

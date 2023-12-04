@@ -13,17 +13,19 @@
     width: 100px;
 
     &:hover {
-      background-color: #007bff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      background-color: var(--background-color-emerald-400);
       color: #fff;
     }
   }
 
-  .active {
-    background-color: #007bff;
+  .upcoming {
+    background-color: var(--background-color-emerald-500);
     color: #fff;
   }
 
   .disabled {
+    background-color: white;
     pointer-events: none;
     opacity: 0.5;
   }

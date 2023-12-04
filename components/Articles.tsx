@@ -24,7 +24,7 @@ export default function Articles({
             <div className="details-column">
               <h2 className="title">{article.meta.title}</h2>
               <p className="description">{article.meta.description}</p>
-              <Link className="read-more" href={`/articles/${article.slug}`}>
+              <Link className="read-more" href={`/article/${article.slug}`}>
                 Read More
               </Link>
             </div>

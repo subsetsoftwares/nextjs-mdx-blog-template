@@ -13,9 +13,11 @@
   --text-color-emerald-300: rgb(110 231 183);
   --text-color-emerald-700: rgb(4 120 87);
 
-  --background-color-emerald-700: rgb(4 120 87); /* emerald 700 */
-  --background-color-emerald-200: rgb(167 243 208); /* emerald 200 */
-  --background-color-emerald-100: rgb(209 250 229); /* emerald 100 */
+  --background-color-emerald-100: rgb(209 250 229);
+  --background-color-emerald-200: rgb(167 243 208);
+  --background-color-emerald-400: rgb(52 211 153);
+  --background-color-emerald-500: rgb(16 185 129);
+  --background-color-emerald-700: rgb(4 120 87);
   --background-color-amber-100: rgb(254, 243, 199);
   --background-color-gray-300: rgb(209 213 219);
   --background-color-gray-500: rgb(107 114 128);
