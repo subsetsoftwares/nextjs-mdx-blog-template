@@ -30,30 +30,7 @@ npx create-next-app@latest --ts
 - Would you like to use App Router? (recommended) `No`
 - Would you like to customize the default import alias (@/\*)? `No`
 
-Install packages needed to render MDX:
-
-```sh
-npm install @next/mdx @mdx-js/loader @mdx-js/react @types/mdx
-```
-
-Update the next.config.js file at your project's root to configure it to use MDX:
-
-```js
-// next.config.js
-
-const withMDX = require("@next/mdx")();
-
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  // Configure `pageExtensions` to include MDX files
-  pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
-  // Optionally, add any other Next.js config below
-};
-
-module.exports = withMDX(nextConfig);
-```
-
-Then to read meta data information from the mdx files, we use `gray-matter` npm package.
+To read meta data information from the mdx files, we use `gray-matter` npm package.
 
 ```sh
 npm install gray-matter

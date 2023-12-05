@@ -2,6 +2,7 @@ export const ARTICLES_DIRECTORY = "articles";
 export const RECENT_ARTICLES_COUNT = 12;
 export const TOP_TAGS_LIMIT = 24;
 export const ARTICLES_PAGE_LIMIT = 10;
+export const MAX_PAGES = 1000;
 
 export const LOGO_URL = "/subset-logo-transparent.png";
 export const ZEN_TEMPLE_URL = "/zen-temple.png";
