@@ -9,7 +9,7 @@
     text-align: center;
     align-items: center;
     .title {
-      color: var(--text-color-secondary-800);
+      color: var(--text-color-amber-800);
       font-size: 2rem;
       text-align: center;
     }
@@ -20,7 +20,9 @@
     }
     .view-all {
       padding: 1rem;
-      background: white;
+      background: var(--background-color-amber-600);
+      border-radius: var(--border-radius);
+      color: white;
       text-align: center;
       width: 120px;
     }

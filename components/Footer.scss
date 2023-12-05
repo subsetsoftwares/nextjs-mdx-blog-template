@@ -44,8 +44,18 @@
   }
 }
 
-@media (max-width: 730px) {
+@media (max-width: 550px) {
   .footer {
+    flex-direction: column;
+    text-align: center;
     padding: 1rem;
+
+    .gray-tagline {
+      margin-top: 0.5rem;
+    }
+
+    .links {
+      text-align: center;
+    }
   }
 }

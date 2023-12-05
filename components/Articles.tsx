@@ -22,7 +22,7 @@ export default function Articles({
           <div key={article.slug} className="article">
             <div className="date-column">{article.meta.publishedDate}</div>
             <div className="details-column">
-              <h2 className="title">{article.meta.title}</h2>
+              <h3 className="title">{article.meta.title}</h3>
               <p className="description">{article.meta.description}</p>
               <Link className="read-more" href={`/article/${article.slug}`}>
                 Read More

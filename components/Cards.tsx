@@ -1,4 +1,4 @@
-import { getBlogUrl } from "@/helpers/getBlogUrl";
+import { getArticleUrl } from "@/helpers/getArticleUrl";
 import { Article } from "@/types/article";
 import BackgroundCheck from "./BackgroundCheck";
 import Card from "./Card";
@@ -12,7 +12,7 @@ const Cards = ({ cards, title }: { cards: Article[]; title: string }) => {
         {cards.map((card) => (
           <Card
             key={card.slug}
-            href={getBlogUrl(card.slug)}
+            href={getArticleUrl(card.slug)}
             title={card.meta.title}
             description={card.meta.description}
             publishedAt={card.meta.publishedDate}

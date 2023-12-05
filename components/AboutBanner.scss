@@ -1,6 +1,6 @@
 .about-banner {
   display: flex;
-  height: calc(100vh - var(--header-panel-height) - 150px);
+  min-height: calc(100vh - var(--header-panel-height) - 150px);
 
   .left-section {
     flex: 1;
@@ -33,11 +33,6 @@
         font-size: 1.2rem;
       }
 
-      .what-we-do {
-        font-size: 1.1rem;
-        width: 400px;
-      }
-
       h2 {
         margin: 10px 0;
         font-size: 4.5rem;
@@ -50,16 +45,16 @@
   }
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 991px) {
   .about-banner {
     display: block;
     background-color: var(--background-color-emerald-700);
-    height: calc(100vh - var(--header-panel-height));
+    min-height: calc(100vh - var(--header-panel-height));
 
     .left-section {
       background-color: var(--background-color-emerald-700);
       padding: 36px;
-      height: 45vh;
+      min-height: 45vh;
     }
 
     .right-section {

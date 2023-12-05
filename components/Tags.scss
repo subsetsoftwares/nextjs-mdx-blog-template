@@ -1,5 +1,5 @@
 .tags {
-  border: 4px solid var(--border-color-tags);
+  border: 4px solid var(--border-color-emerald-400);
   margin: 3rem 2rem;
   border-radius: var(--border-radius);
 
@@ -14,7 +14,7 @@
   .tag {
     display: flex;
     justify-content: space-between;
-    border-bottom: 4px solid var(--border-color-tags);
+    border-bottom: 4px solid var(--border-color-emerald-400);
     cursor: pointer;
     font-size: 1.2rem;
     padding-bottom: 0.5rem;

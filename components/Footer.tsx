@@ -1,9 +1,5 @@
 import { QUOTE_KNOWLEDGE_SHARING } from "@/utility/constants";
-import {
-  PAGE_ABOUT,
-  PAGE_ARTICLES_INDEX,
-  PAGE_PROJECTS_INDEX,
-} from "@/utility/urls";
+import { PAGE_ABOUT, PAGE_ARTICLES_INDEX } from "@/utility/urls";
 import Link from "next/link";
 import React from "react";
 import "./Footer.scss";
@@ -16,9 +12,6 @@ const Footer: React.FC = () => {
       </div>
       <div className="section">
         <div className="links">
-          <Link className="link" href={PAGE_PROJECTS_INDEX}>
-            Projects
-          </Link>
           <Link className="link" href={PAGE_ARTICLES_INDEX}>
             Articles
           </Link>

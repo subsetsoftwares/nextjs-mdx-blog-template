@@ -1,10 +1,5 @@
 import { LOGO_URL } from "@/utility/constants";
-import {
-  PAGE_ABOUT,
-  PAGE_ARTICLES_INDEX,
-  PAGE_HOME,
-  PAGE_PROJECTS_INDEX,
-} from "@/utility/urls";
+import { PAGE_ABOUT, PAGE_ARTICLES_INDEX, PAGE_HOME } from "@/utility/urls";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -27,9 +22,6 @@ const Header: React.FC = () => {
       </div>
 
       <div className="links">
-        <Link className="link" href={PAGE_PROJECTS_INDEX}>
-          Projects
-        </Link>
         <Link className="link" href={PAGE_ARTICLES_INDEX}>
           Articles
         </Link>
