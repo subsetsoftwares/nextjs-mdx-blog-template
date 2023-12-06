@@ -2,4 +2,15 @@ article {
   background-color: var(--background-color-gray-300);
   min-height: var(--content-panel-min-height);
   padding: 1rem;
+
+  .markdown-preview {
+    margin: auto;
+  }
+}
+
+@media (max-width: 550px) {
+  article {
+    padding: 0;
+    padding-bottom: 2rem;
+  }
 }

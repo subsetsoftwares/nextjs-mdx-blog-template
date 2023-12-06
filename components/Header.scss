@@ -26,6 +26,7 @@
 
   .links {
     .link {
+      font-size: calc(var(--base-font-size) * 0.95);
       margin-left: 20px;
       cursor: pointer;
     }
