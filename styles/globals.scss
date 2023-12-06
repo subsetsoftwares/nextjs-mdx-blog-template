@@ -1,7 +1,10 @@
+@use "./mixins";
+
 :root {
-  --max-width: 1100px;
+  --max-width-page: 1400px;
   --max-width-article: 800px;
   --border-radius: 1rem;
+  --card-base-size: 320px;
 
   --header-panel-height: 76px;
   --footer-panel-height: 300px;
@@ -12,10 +15,6 @@
   --font-family-heading: "Roboto Slab", serif;
   --font-family-content: "Roboto", sans-serif;
   --font-family-code: "JetBrains Mono", monospace;
-
-  --font-size-code-lg: 0.95rem;
-  --font-size-code-md: 0.9rem;
-  --font-size-code-sm: 0.8rem;
 
   --h2-title-color: #696969;
   --h3-title-color: #555555;
@@ -49,41 +48,29 @@
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1101px) {
   :root {
-    --h1-font-size: 4.5rem;
-    --h2-font-size: 4rem;
-    --h3-font-size: 2.4rem;
-    --code-h1-font-size: 2rem;
-    --code-h2-font-size: 1.8rem;
-    --code-h3-font-size: 1.5rem;
-    --p-font-size: 1.15rem;
+    --base-font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 1100px) {
+  :root {
+    --base-font-size: 1.3rem;
     --font-size-code: 0.95rem;
   }
 }
 
 @media (max-width: 991px) {
   :root {
-    --h1-font-size: 3.8rem;
-    --h2-font-size: 3.4rem;
-    --h3-font-size: 2.2rem;
-    --code-h1-font-size: 2rem;
-    --code-h2-font-size: 1.8rem;
-    --code-h3-font-size: 1.5rem;
-    --p-font-size: 1.1rem;
+    --base-font-size: 1.2rem;
     --font-size-code: 0.9rem;
   }
 }
 
 @media (max-width: 550px) {
   :root {
-    --h1-font-size: 3.2rem;
-    --h2-font-size: 3rem;
-    --h3-font-size: 1.5rem;
-    --code-h1-font-size: 2rem;
-    --code-h2-font-size: 1.8rem;
-    --code-h3-font-size: 1.5rem;
-    --p-font-size: 1.1rem;
+    --base-font-size: 1rem;
     --font-size-code: 0.8rem;
   }
 }
@@ -93,6 +80,7 @@
   padding: 0;
   margin: 0;
   font-family: var(--font-family-content);
+  @include mixins.set-font-sizes(var(--base-font-size));
 }
 
 html,
@@ -106,24 +94,6 @@ a {
   text-decoration: none;
 }
 
-h1,
-h2,
-h3 {
-  font-family: var(--font-family-heading);
-}
-
-h1 {
-  font-size: var(--h1-font-size);
-}
-
-h2 {
-  font-size: var(--h2-font-size);
-}
-
-h3 {
-  font-size: var(--h3-font-size);
-}
-
 p {
   font-size: var(--p-font-size);
 }
@@ -132,15 +102,7 @@ p {
 .section-title {
   color: var(--section-title-color);
   padding: 2.5rem 0 2rem;
-  font-size: 2rem;
   text-align: center;
-
-  @media (max-width: 550px) {
-    & {
-      text-align: left;
-      margin-left: 0.7rem;
-    }
-  }
 }
 
 /* markdown */
@@ -194,18 +156,6 @@ p {
       padding: 2px;
       border-radius: 6px;
     }
-  }
-
-  h1 {
-    font-size: var(--code-h1-font-size);
-  }
-
-  h2 {
-    font-size: var(--code-h2-font-size);
-  }
-
-  h3 {
-    font-size: var(--code-h3-font-size);
   }
 
   @media (max-width: 550px) {

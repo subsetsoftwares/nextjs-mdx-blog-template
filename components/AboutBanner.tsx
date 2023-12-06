@@ -7,7 +7,7 @@ export default function AboutBanner({ imageUrl }: { imageUrl: string }) {
     <div className="about-banner">
       <div className="left-section">
         <Image
-          className="logo"
+          className="info-image"
           src={imageUrl}
           alt="Company Logo"
           width={300}

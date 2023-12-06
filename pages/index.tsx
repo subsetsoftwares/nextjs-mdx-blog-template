@@ -34,12 +34,10 @@ const Home: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
   return (
     <>
       <Head />
-      <main>
-        <AboutBanner imageUrl={ZEN_TEMPLE_LARGE_URL} />
-        <Cards title="Recent Articles" cards={articles.recent} />
-        <Tags title="Popular Tags" tags={tags.popular} showCount={true} />
-        <BigBlock quote={QUOTE_SOLVE} subtitle={QUOTE_SOLVE_SUBTITLE} />
-      </main>
+      <AboutBanner imageUrl={ZEN_TEMPLE_LARGE_URL} />
+      <Cards title="Recent Articles" cards={articles.recent} />
+      <Tags title="Popular Tags" tags={tags.popular} showCount={true} />
+      <BigBlock quote={QUOTE_SOLVE} subtitle={QUOTE_SOLVE_SUBTITLE} />
     </>
   );
 };

@@ -2,7 +2,7 @@
   padding-bottom: 2rem;
   .section {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 300px);
+    grid-template-columns: repeat(auto-fill, min(var(--card-base-size), 90vw));
     justify-content: center;
     gap: 1rem;
   }

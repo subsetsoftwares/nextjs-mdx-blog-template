@@ -1,7 +1,7 @@
 .tags {
   border: 4px solid var(--border-color-emerald-400);
-  margin: 3rem 2rem;
   border-radius: var(--border-radius);
+  margin: 3rem 2rem;
 
   .section {
     display: grid;
@@ -25,5 +25,12 @@
       font-size: 0.9rem;
       background: rgb(236 253 245);
     }
+  }
+}
+
+@media (max-width: 550px) {
+  .tags {
+    margin: 3rem auto;
+    width: min(var(--card-base-size), 90vw);
   }
 }

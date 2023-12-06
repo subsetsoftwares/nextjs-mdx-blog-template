@@ -28,3 +28,11 @@
     }
   }
 }
+
+@media (max-width: 550px) {
+  .big-block {
+    padding: 0;
+    width: min(var(--card-base-size), 90vw);
+    margin: 0 auto 4rem;
+  }
+}

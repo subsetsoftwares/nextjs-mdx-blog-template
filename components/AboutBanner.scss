@@ -1,4 +1,8 @@
+@use "../styles/mixins";
+
 .about-banner {
+  @include mixins.set-font-sizes(var(--base-font-size));
+
   display: flex;
   min-height: calc(100vh - var(--header-panel-height) - 150px);
 
@@ -8,11 +12,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-    .info-image {
-      width: 150px;
-      height: auto;
-    }
   }
 
   .right-section {
@@ -30,12 +29,10 @@
       .hello-world {
         text-transform: uppercase;
         font-weight: bold;
-        font-size: 1.2rem;
       }
 
       h2 {
         margin: 10px 0;
-        font-size: 4.5rem;
       }
 
       p {
@@ -45,7 +42,7 @@
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 550px) {
   .about-banner {
     display: block;
     background-color: var(--background-color-emerald-700);
@@ -55,10 +52,40 @@
       background-color: var(--background-color-emerald-700);
       padding: 36px;
       min-height: 45vh;
+
+      .info-image {
+        max-width: 85vw;
+        height: auto;
+      }
     }
 
     .right-section {
       padding: 36px;
     }
+  }
+}
+
+@media (max-width: 991px) {
+  .about-banner {
+    display: block;
+    background-color: var(--background-color-emerald-700);
+    min-height: 75vh;
+    .left-section {
+      background-color: var(--background-color-emerald-700);
+      min-height: 36vh;
+    }
+    .right-section {
+      min-height: calc(75vh - 36vh);
+      padding-bottom: 5vh;
+      .what-we-do {
+        width: 80vw;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .about-banner .right-section .content p {
+    margin: 2rem 3rem;
   }
 }
