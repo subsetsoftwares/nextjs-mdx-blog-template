@@ -1,14 +1,17 @@
+@use "../styles/mixins";
+
 .tags {
   border: 4px solid var(--border-color-emerald-400);
   border-radius: var(--border-radius);
   margin: 3rem 2rem;
 
   .section {
+    @include mixins.set-card-sizes();
+
     display: grid;
-    grid-template-columns: repeat(auto-fill, 320px);
     justify-content: center;
     gap: 2rem;
-    margin-bottom: 2rem;
+    margin: 0 2rem 2rem;
   }
 
   .tag {
@@ -16,7 +19,7 @@
     justify-content: space-between;
     border-bottom: 4px solid var(--border-color-emerald-400);
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 1rem;
     padding-bottom: 0.5rem;
 
     .count {
@@ -25,12 +28,5 @@
       font-size: 0.9rem;
       background: rgb(236 253 245);
     }
-  }
-}
-
-@media (max-width: 550px) {
-  .tags {
-    margin: 3rem auto;
-    width: min(var(--card-base-size), 90vw);
   }
 }

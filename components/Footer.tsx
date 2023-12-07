@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
   return (
     <div className="footer">
       <div className="section">
-        <p className="gray-tagline">{QUOTE_KNOWLEDGE_SHARING}</p>
+        <h2 className="gray-tagline">{QUOTE_KNOWLEDGE_SHARING}</h2>
       </div>
       <div className="section">
         <div className="links">

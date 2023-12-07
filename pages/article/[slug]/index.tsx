@@ -1,7 +1,7 @@
 import Head from "@/components/Head";
 import RenderArticle from "@/components/RenderArticle";
 import { Article, ArticlesPageResult } from "@/types/article";
-import { ARTICLES_PAGE_LIMIT, MAX_PAGES } from "@/utility/constants";
+import { DEFAULT_PAGE_LIMIT, MAX_PAGES } from "@/utility/constants";
 import { API_ARTICLE, API_ARTICLES_ALL } from "@/utility/urls";
 import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import React from "react";
@@ -13,7 +13,7 @@ export async function getStaticPaths() {
 
   while (hasMoreArticles) {
     const pageResponse = await fetch(
-      `${API_ARTICLES_ALL}?page=${page}&limit=${ARTICLES_PAGE_LIMIT}`
+      `${API_ARTICLES_ALL}?page=${page}&limit=${DEFAULT_PAGE_LIMIT}`
     );
     const articlesPageResult: ArticlesPageResult = await pageResponse.json();
     const { articles, totalPages } = articlesPageResult;

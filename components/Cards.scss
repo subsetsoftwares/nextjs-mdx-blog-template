@@ -1,9 +1,14 @@
+@use "../styles/mixins";
+
 .cards {
   padding-bottom: 2rem;
   .section {
+    @include mixins.set-card-sizes();
+
     display: grid;
-    grid-template-columns: repeat(auto-fill, min(var(--card-base-size), 90vw));
+    grid-template-columns: repeat(4, 1fr);
     justify-content: center;
     gap: 1rem;
+    margin: 0 2rem;
   }
 }

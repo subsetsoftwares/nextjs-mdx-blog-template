@@ -3,12 +3,12 @@ import Head from "@/components/Head";
 import Pagination from "@/components/Pagination";
 import { ArticlesPageResult } from "@/types/article";
 import { DEFAULT_PAGE_LIMIT } from "@/utility/constants";
-import { API_ARTICLES_ALL } from "@/utility/urls";
+import { API_TAG, API_TAGS_ALL } from "@/utility/urls";
 import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import React from "react";
 
 export async function getStaticPaths() {
-  const response = await fetch(API_ARTICLES_ALL);
+  const response = await fetch(API_TAGS_ALL);
   const { totalPages } = await response.json();
   const paths = Array.from({ length: totalPages }, (_, index) => ({
     params: { page: (index + 1).toString() },
@@ -27,7 +27,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
   }
 
   const { page } = params;
-  const apiUrl = `${API_ARTICLES_ALL}?page=${page}&limit=${DEFAULT_PAGE_LIMIT}`;
+  const apiUrl = `${API_TAG}?page=${page}&limit=${DEFAULT_PAGE_LIMIT}`;
   const response = await fetch(apiUrl);
   const articlesPageResult: ArticlesPageResult = await response.json();
 

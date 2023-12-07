@@ -27,5 +27,6 @@
   .published {
     margin-top: 0.2rem;
     text-decoration: underline;
+    font-size: calc(var(--base-font-size) * 0.8);
   }
 }
