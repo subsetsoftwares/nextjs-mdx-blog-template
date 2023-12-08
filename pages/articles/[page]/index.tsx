@@ -41,6 +41,10 @@ export async function getStaticProps(context: GetStaticPropsContext) {
 const Home: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
   articlesPageResult,
 }) => {
+  const getNavigationLink = (page: number) => {
+    return `/articles/${page}`;
+  };
+
   return (
     <>
       <Head />
@@ -49,7 +53,10 @@ const Home: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
         title="All Articles"
         pageNumber={articlesPageResult.page}
       />
-      <Pagination totalPages={articlesPageResult.totalPages} />
+      <Pagination
+        totalPages={articlesPageResult.totalPages}
+        getNavigationLink={getNavigationLink}
+      />
     </>
   );
 };

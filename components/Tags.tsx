@@ -5,7 +5,7 @@ import "./Tags.scss";
 type Props = { tags: TagCount[]; title: string; showCount?: boolean };
 
 function getTagsLink(value: TagCount) {
-  return `/tag?page=1&limit=10&tag=${value.tag}`;
+  return `/tags/${value.tag}/1`;
 }
 
 export default function Tags({ tags, title, showCount }: Props) {

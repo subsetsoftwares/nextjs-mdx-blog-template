@@ -5,9 +5,10 @@ import "./Pagination.scss";
 
 interface Props {
   totalPages: number;
+  getNavigationLink: (page: number) => string;
 }
 
-export default function Pagination({ totalPages }: Props) {
+export default function Pagination({ totalPages, getNavigationLink }: Props) {
   const router = useRouter();
   const [currentPage, setCurrentPage] = useState<number>(1);
 
@@ -19,13 +20,13 @@ export default function Pagination({ totalPages }: Props) {
   return (
     <div className="pagination">
       <Link
-        href={`/articles/${currentPage - 1}`}
+        href={getNavigationLink(currentPage - 1)}
         className={`button previous ${currentPage === 1 ? "disabled" : ""}`}
       >
         &lt; Previous
       </Link>
       <Link
-        href={`/articles/${currentPage + 1}`}
+        href={getNavigationLink(currentPage + 1)}
         className={`button upcoming ${
           currentPage === totalPages ? "disabled" : ""
         }`}

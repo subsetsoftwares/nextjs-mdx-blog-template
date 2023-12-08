@@ -1,7 +1,7 @@
 const article = {
   meta: {
     title: "Article One",
-    description: "Here is summary of article one",
+    summary: "Here is summary of article one",
     publishedDate: "03/03/2023",
     tags: "javascript, backend-for-frontend, storybook, micro-frontend, typescript",
   },

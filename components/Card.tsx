@@ -5,16 +5,16 @@ import "./Card.scss";
 interface CardProps {
   href: string;
   title: string;
-  description: string;
+  summary: string;
   publishedAt: string;
 }
 
 const Card: React.FC<CardProps> = (props) => {
-  const { href, title, description, publishedAt } = props;
+  const { href, title, summary, publishedAt } = props;
   return (
     <Link className="card" href={href}>
       <h3 className="title">{title}</h3>
-      <p className="description">{description}</p>
+      <p className="summary">{summary}</p>
       <p className="published">{publishedAt}</p>
     </Link>
   );

@@ -1,7 +1,7 @@
 @use "../styles/mixins";
 
 .cards {
-  padding-bottom: 2rem;
+  padding: 1px 0 2rem;
   .section {
     @include mixins.set-card-sizes();
 

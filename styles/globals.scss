@@ -22,6 +22,17 @@
   --text-color-emerald-300: rgb(110 231 183);
   --text-color-emerald-700: rgb(4 120 87);
   --text-color-amber-800: rgb(146 64 14);
+  --text-color-gray-50: rgb(249 250 251);
+  --text-color-gray-100: rgb(243 244 246);
+  --text-color-gray-200: rgb(229 231 235);
+  --text-color-gray-300: rgb(209 213 219);
+  --text-color-gray-400: rgb(156 163 175);
+  --text-color-gray-500: rgb(107 114 128);
+  --text-color-gray-600: rgb(75 85 99);
+  --text-color-gray-700: rgb(55 65 81);
+  --text-color-gray-800: rgb(31 41 55);
+  --text-color-gray-900: rgb(17 24 39);
+  --text-color-gray-950: rgb(3 7 18);
 
   --background-color-emerald-100: rgb(209 250 229);
   --background-color-emerald-200: rgb(167 243 208);
@@ -38,7 +49,8 @@
   --border-color-emerald-400: rgb(52 211 153);
   --border-color-gray-500: rgb(107 114 128);
 
-  --section-title-color: var(--h2-title-color);
+  --section-title-color: var(--text-color-gray-500);
+  --section-subtitle-color: var(--text-color-gray-500);
   --card-title-color: var(--h3-title-color);
 }
 
@@ -98,7 +110,13 @@ a {
 /* common */
 .section-title {
   color: var(--section-title-color);
-  padding: 2.5rem 0 2rem;
+  margin: 2.5rem 0 2rem;
+  text-align: center;
+}
+
+.section-subtitle {
+  color: var(--section-subtitle-color);
+  margin: 1.5rem 0;
   text-align: center;
 }
 

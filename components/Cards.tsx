@@ -14,7 +14,7 @@ const Cards = ({ cards, title }: { cards: Article[]; title: string }) => {
             key={card.slug}
             href={getArticleUrl(card.slug)}
             title={card.meta.title}
-            description={card.meta.description}
+            summary={card.meta.summary}
             publishedAt={card.meta.publishedDate}
           />
         ))}

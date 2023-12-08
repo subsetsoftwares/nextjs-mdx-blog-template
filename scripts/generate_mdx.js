@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const numberToWords = require("number-to-words");
+const readFileContent = require("./read_file_content");
 
 function capitalize(word) {
   // Capitalize first letter
@@ -59,7 +60,7 @@ function generateRandomTags() {
   return selectedTags.join(", ");
 }
 
-function createMDXFile(outputDir, index) {
+async function createMDXFile(outputDir, index) {
   const number = numberToWords.toWords(index);
   const word = number
     .split("-")
@@ -67,20 +68,21 @@ function createMDXFile(outputDir, index) {
     .join(" ");
   const slug = number.split(" ").join("-").toLowerCase();
   const filename = path.join(outputDir, `article-${slug}.mdx`);
-  const title = `Article ${word}`;
-  const description = `Here is the summary of Article ${word}`;
-  const publishedDate = generateRandomDate();
+  const title = `Here is the title of article  ${word.toLowerCase()}`;
+  const summary = `Here is the summary of article ${word.toLowerCase()} giving a gimplse of the article`;
   const tags = generateRandomTags();
+  const publishedDate = generateRandomDate();
+  const content = await readFileContent("./scripts/sample-mdx");
 
   const mdxContent = [
     "---",
     "title: " + title,
-    "description: " + description,
+    "summary: " + summary,
     "publishedDate: " + publishedDate,
     "tags: " + tags,
     "---",
     "",
-    "# " + title,
+    content,
   ].join("\n");
 
   fs.writeFileSync(filename, mdxContent);
