@@ -2,24 +2,24 @@ import { QUOTE_KNOWLEDGE_SHARING } from "@/utility/constants";
 import { PAGE_ABOUT, PAGE_ARTICLES_INDEX } from "@/utility/urls";
 import Link from "next/link";
 import React from "react";
-import "./Footer.scss";
+import styles from "./Footer.module.scss";
 
 const Footer: React.FC = () => {
   return (
-    <div className="footer">
-      <div className="section">
-        <h2 className="gray-tagline">{QUOTE_KNOWLEDGE_SHARING}</h2>
+    <div className={styles["footer"]}>
+      <div className={styles["section"]}>
+        <h2 className={styles["gray-tagline"]}>{QUOTE_KNOWLEDGE_SHARING}</h2>
       </div>
-      <div className="section">
-        <div className="links">
-          <Link className="link" href={PAGE_ARTICLES_INDEX}>
+      <div className={styles["section"]}>
+        <div className={styles["links"]}>
+          <Link className={styles["link"]} href={PAGE_ARTICLES_INDEX}>
             Articles
           </Link>
-          <Link className="link" href={PAGE_ABOUT}>
+          <Link className={styles["link"]} href={PAGE_ABOUT}>
             About
           </Link>
         </div>
-        <p className="made-in-india">
+        <p className={styles["made-in-india"]}>
           Made with{" "}
           <span role="img" aria-label="heart">
             ❤️

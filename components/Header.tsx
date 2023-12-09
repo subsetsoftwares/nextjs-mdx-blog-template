@@ -3,29 +3,29 @@ import { PAGE_ABOUT, PAGE_ARTICLES_INDEX, PAGE_HOME } from "@/utility/urls";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import "./Header.scss";
+import styles from "./Header.module.scss";
 
 const Header: React.FC = () => {
   return (
-    <div className="header">
-      <div className="logo">
-        <Link href={PAGE_HOME} className="logo-container">
+    <div className={styles["header"]}>
+      <div className={styles["logo"]}>
+        <Link href={PAGE_HOME} className={styles["logo-container"]}>
           <Image
-            className="logo"
+            className={styles["logo"]}
             src={LOGO_URL}
             alt="Company Logo"
             width={44}
             height={44}
           />
-          <h1 className="title">Subset Softwares</h1>
+          <h1 className={styles["title"]}>Subset Softwares</h1>
         </Link>
       </div>
 
-      <div className="links">
-        <Link className="link" href={PAGE_ARTICLES_INDEX}>
+      <div className={styles["links"]}>
+        <Link className={styles["link"]} href={PAGE_ARTICLES_INDEX}>
           Articles
         </Link>
-        <Link className="link" href={PAGE_ABOUT}>
+        <Link className={styles["link"]} href={PAGE_ABOUT}>
           About
         </Link>
       </div>

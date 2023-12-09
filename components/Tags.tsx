@@ -1,6 +1,6 @@
 import { TagCount } from "@/types/tag";
 import Link from "next/link";
-import "./Tags.scss";
+import styles from "./Tags.module.scss";
 
 type Props = { tags: TagCount[]; title: string; showCount?: boolean };
 
@@ -10,13 +10,17 @@ function getTagsLink(value: TagCount) {
 
 export default function Tags({ tags, title, showCount }: Props) {
   return (
-    <div className="tags">
-      <h2 className="section-title">{title}</h2>
-      <div className="section">
+    <div className={styles["tags"]}>
+      <h2 className={styles["section-title"]}>{title}</h2>
+      <div className={styles["section"]}>
         {tags.map((item) => (
-          <Link className="tag" key={item.tag} href={getTagsLink(item)}>
-            <div className="value">{item.tag}</div>
-            {showCount && <div className="count">{item.count}</div>}
+          <Link
+            className={styles["tag"]}
+            key={item.tag}
+            href={getTagsLink(item)}
+          >
+            <div className={styles["value"]}>{item.tag}</div>
+            {showCount && <div className={styles["count"]}>{item.count}</div>}
           </Link>
         ))}
       </div>

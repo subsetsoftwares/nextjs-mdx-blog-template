@@ -6,9 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "npm run build && firebase deploy"
   },
   "dependencies": {
+    "clsx": "^2.0.0",
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.9.0",
     "next": "14.0.3",

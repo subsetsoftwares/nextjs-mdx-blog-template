@@ -1,11 +1,10 @@
 import React, { PropsWithChildren } from "react";
-import "./BackgroundCheck.scss";
+import styles from "./BackgroundCheck.module.scss";
 
-type Props = PropsWithChildren & { className: string };
-const BackgroundCheck: React.FC<Props> = ({ children, className }: Props) => {
-  return (
-    <div className={`background-check ${className ?? ""}`}>{children}</div>
-  );
+const BackgroundCheck: React.FC<PropsWithChildren> = ({
+  children,
+}: PropsWithChildren) => {
+  return <div className={styles["background-check"]}>{children}</div>;
 };
 
 export default BackgroundCheck;
