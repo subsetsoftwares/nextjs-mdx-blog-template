@@ -17,8 +17,8 @@ export default function Articles({
 }: ArticlesProps) {
   return (
     <div className={styles["articles"]}>
-      <h2 className={styles["section-title"]}>{title}</h2>
-      {subtitle && <h3 className={styles["section-subtitle"]}>{subtitle}</h3>}
+      <h2 className="section-title">{title}</h2>
+      {subtitle && <h3 className={"section-subtitle"}>{subtitle}</h3>}
       <p className={styles["page-count"]}>Page {pageNumber}</p>
       <div className={styles["list"]}>
         {articles.map((article) => (

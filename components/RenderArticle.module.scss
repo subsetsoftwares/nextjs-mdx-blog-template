@@ -3,10 +3,6 @@
   min-height: var(--content-panel-min-height);
   padding: var(--base-spacing);
 
-  .markdown-preview {
-    margin: auto;
-  }
-
   @media (max-width: 550px) {
     & {
       padding: 0;

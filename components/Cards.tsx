@@ -8,7 +8,7 @@ const Cards = ({ cards, title }: { cards: Article[]; title: string }) => {
   return (
     <BackgroundCheck>
       <div className={styles["cards"]}>
-        <h2 className={styles["section-title"]}>{title}</h2>
+        <h2 className="section-title">{title}</h2>
         <div className={styles["section"]}>
           {cards.map((card) => (
             <Card
