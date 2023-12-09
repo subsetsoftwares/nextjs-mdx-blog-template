@@ -14,7 +14,7 @@ export async function getStaticPaths() {
   const response = await fetch(API_TAGS_ALL);
   const data = await response.json();
   const tags: TagCount[] = data.tags;
-  const paths: Path[] = [];
+  let paths: Path[] = [];
 
   // get all pages for a tag
   for (const { tag } of tags) {
@@ -25,7 +25,7 @@ export async function getStaticPaths() {
     const tagPaths = Array.from({ length: totalPages }, (_, index) => ({
       params: { tag, page: (index + 1).toString() },
     }));
-    paths.concat(tagPaths);
+    paths = paths.concat(tagPaths);
   }
 
   return { paths, fallback: false };
