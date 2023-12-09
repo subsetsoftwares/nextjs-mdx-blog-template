@@ -1,7 +1,13 @@
+@use "../styles/common";
+
 .rendered-article {
   background-color: var(--background-color-gray-300);
   min-height: var(--content-panel-min-height);
   padding: var(--base-spacing);
+
+  .section-title {
+    @extend .section-title;
+  }
 
   @media (max-width: 550px) {
     & {

@@ -1,0 +1,7 @@
+.section-title {
+  color: var(--section-title-color);
+  max-width: var(--max-width-article);
+  margin: calc(var(--base-spacing) * 2.5) auto calc(var(--base-spacing) * 2);
+  text-align: center;
+  padding-left: 16px;
+}
