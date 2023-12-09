@@ -11,7 +11,7 @@ function getTagsLink(value: TagCount) {
 export default function Tags({ tags, title, showCount }: Props) {
   return (
     <div className={styles["tags"]}>
-      <h2 className={styles["section-title"]}>{title}</h2>
+      <h2 className="section-title">{title}</h2>
       <div className={styles["section"]}>
         {tags.map((item) => (
           <Link
