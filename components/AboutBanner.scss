@@ -50,7 +50,7 @@
 
     .left-section {
       background-color: var(--background-color-emerald-700);
-      padding: 36px;
+      padding: calc(var(--base-spacing) * 2);
       min-height: 45vh;
 
       .info-image {
@@ -60,7 +60,7 @@
     }
 
     .right-section {
-      padding: 36px;
+      padding: calc(var(--base-spacing) * 2);
     }
   }
 }

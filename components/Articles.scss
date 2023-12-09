@@ -1,6 +1,6 @@
 .articles {
   background-color: var(--background-color-gray-300);
-  padding: 1rem;
+  padding: var(--base-spacing);
   .page-count {
     text-align: center;
     color: var(--h3-title-color);
@@ -23,9 +23,9 @@
       background-color: white;
       border: 1px solid var(--border-color-gray-500);
       border-radius: var(--border-radius);
-      padding: 1rem;
+      padding: var(--base-spacing);
       .summary {
-        padding: 0.5rem 0;
+        padding: calc(var(--base-spacing) * 0.5) 0;
       }
       .read-more {
         color: var(--text-color-emerald-700);

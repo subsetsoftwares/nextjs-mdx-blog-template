@@ -25,6 +25,44 @@
   }
 }
 
+@mixin set-font-family($font-family-heading) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: $font-family-heading;
+  }
+}
+
+@mixin set-font-spacing($base-font-size) {
+  h1 {
+    margin: calc($base-font-size * 2) 0 calc($base-font-size * 1);
+  }
+
+  h2 {
+    margin: calc($base-font-size * 1.8) 0 calc($base-font-size * 0.9);
+  }
+
+  h3 {
+    margin: calc($base-font-size * 1.3) 0 calc($base-font-size * 0.8);
+  }
+
+  h4 {
+    margin: calc($base-font-size * 1.1) 0 calc($base-font-size * 0.7);
+  }
+
+  h5 {
+    margin: calc($base-font-size * 1) 0 calc($base-font-size * 0.6);
+  }
+}
+
+@mixin set-font-styles() {
+  @include set-font-sizes(var(--base-font-size));
+  @include set-font-family(var(--font-family-heading));
+  @include set-font-spacing(var(--base-spacing));
+}
+
 @mixin set-card-sizes() {
   @media (min-width: 1101px) {
     & {

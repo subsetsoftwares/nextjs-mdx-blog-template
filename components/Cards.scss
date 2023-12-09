@@ -1,7 +1,7 @@
 @use "../styles/mixins";
 
 .cards {
-  padding: 1px 0 2rem;
+  padding: 1px 0 calc(var(--base-spacing) * 2);
   .section {
     @include mixins.set-card-sizes();
 
@@ -9,6 +9,6 @@
     grid-template-columns: repeat(4, 1fr);
     justify-content: center;
     gap: 1rem;
-    margin: 0 2rem;
+    margin: 0 calc(var(--base-spacing) * 2);
   }
 }

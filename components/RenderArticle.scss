@@ -1,7 +1,7 @@
 article {
   background-color: var(--background-color-gray-300);
   min-height: var(--content-panel-min-height);
-  padding: 1rem;
+  padding: var(--base-spacing);
 
   .markdown-preview {
     margin: auto;
@@ -11,6 +11,7 @@ article {
 @media (max-width: 550px) {
   article {
     padding: 0;
-    padding-bottom: 2rem;
+    padding-bottom: calc(var(--base-spacing) * 2);
+    padding-top: 1px;
   }
 }

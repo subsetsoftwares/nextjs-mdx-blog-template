@@ -2,14 +2,14 @@
   display: flex;
   justify-content: center;
   gap: 1rem;
-  padding: 1rem;
+  padding: var(--base-spacing);
   background-color: var(--background-color-gray-500);
 
   .button {
     border: 2px solid var(--border-color-gray-500);
     border-radius: var(--border-radius);
     background-color: white;
-    padding: 12px;
+    padding: calc(var(--base-spacing) * 0.75);
     text-align: center;
     width: 120px;
     font-size: calc(var(--base-font-size) * 0.9);
