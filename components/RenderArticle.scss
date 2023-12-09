@@ -15,3 +15,12 @@ article {
     padding-top: 1px;
   }
 }
+
+@media (min-width: 768px) {
+  article {
+    .section-title {
+      max-width: var(--max-width-article);
+      text-align: left;
+    }
+  }
+}

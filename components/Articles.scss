@@ -6,8 +6,8 @@
     color: var(--h3-title-color);
   }
   .article {
-    margin: 2rem auto;
-    max-width: 700px;
+    margin: calc(var(--base-spacing) * 2) auto;
+    max-width: var(--max-width-article);
     .date-column {
       background-color: var(--background-color-emerald-200);
       border: 1px solid var(--border-color-gray-500);
@@ -24,6 +24,9 @@
       border: 1px solid var(--border-color-gray-500);
       border-radius: var(--border-radius);
       padding: var(--base-spacing);
+      .title {
+        margin-top: calc(var(--base-spacing) * 0.5);
+      }
       .summary {
         padding: calc(var(--base-spacing) * 0.5) 0;
       }
@@ -40,7 +43,7 @@
 @media (max-width: 550px) {
   .articles {
     .article {
-      margin: 2rem 0.2rem;
+      margin: calc(var(--base-spacing) * 2) calc(var(--base-spacing) * 0.2);
     }
   }
 }

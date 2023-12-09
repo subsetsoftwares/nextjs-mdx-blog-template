@@ -119,21 +119,14 @@ a {
 .section-title {
   color: var(--section-title-color);
   max-width: var(--max-width-article);
-  margin: 2.5rem auto 2rem;
-  text-align: left;
+  margin: calc(var(--base-spacing) * 2.5) auto calc(var(--base-spacing) * 2);
+  text-align: center;
   padding-left: 16px;
-
-  @media (max-width: 768px) {
-    & {
-      margin: 2.5rem 0 2rem;
-      text-align: center;
-    }
-  }
 }
 
 .section-subtitle {
   color: var(--section-subtitle-color);
-  margin: 1.5rem 0;
+  margin: calc(var(--base-spacing) * 1.5) 0;
   text-align: center;
 }
 
@@ -160,7 +153,7 @@ a {
     background-position: var(--base-spacing) calc(var(--base-spacing) * 0.75);
     padding: calc(var(--base-spacing) * 2.5) calc(var(--base-spacing) * 1.1)
       calc(var(--base-spacing) * 1.2);
-    margin: 0.5em 0;
+    margin: calc(var(--base-spacing) * 0.5) 0;
     overflow: auto;
     color: #fff;
   }
@@ -182,7 +175,7 @@ a {
   }
 
   p {
-    margin: 1rem 0;
+    margin: var(--base-spacing) 0;
     code {
       font-size: calc(var(--base-font-size) * 0.6);
       background: var(--background-color-gray-200);

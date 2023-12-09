@@ -21,7 +21,7 @@
     text-align: right;
 
     .links {
-      margin-bottom: 1rem;
+      margin-bottom: var(--base-spacing);
 
       .link {
         color: white;
@@ -50,7 +50,7 @@
     padding: var(--base-spacing);
 
     .gray-tagline {
-      margin-top: 0.5rem;
+      margin-top: calc(var(--base-spacing) * 0.5);
     }
 
     .links {

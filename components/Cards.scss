@@ -10,5 +10,11 @@
     justify-content: center;
     gap: 1rem;
     margin: 0 calc(var(--base-spacing) * 2);
+
+    .card {
+      h3.title {
+        margin-top: calc(var(--base-spacing) * 0.5);
+      }
+    }
   }
 }

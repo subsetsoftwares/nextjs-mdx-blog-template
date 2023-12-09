@@ -1,5 +1,5 @@
 .big-block {
-  margin: 0 2rem 2rem;
+  margin: 0 calc(var(--base-spacing) * 2) calc(var(--base-spacing) * 2);
   .container {
     background: var(--background-color-amber-100);
     border-radius: var(--border-radius);
@@ -13,7 +13,7 @@
       text-align: center;
     }
     .sub-title {
-      margin: 1.5rem;
+      margin: calc(var(--base-spacing) * 1.5);
       font-weight: 100;
     }
     .view-all {
