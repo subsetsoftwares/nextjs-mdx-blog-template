@@ -194,7 +194,7 @@ a {
   blockquote {
     background: var(--background-color-gray-100);
     margin: calc(var(--base-font-size) * 0.25) 0;
-    padding: var(--padding-base);
+    padding: var(--base-spacing);
     border-radius: 8px;
     border: 1px solid #000;
   }
