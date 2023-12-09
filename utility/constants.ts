@@ -4,9 +4,9 @@ export const TOP_TAGS_LIMIT = 14;
 export const DEFAULT_PAGE_LIMIT = 10;
 export const MAX_PAGES = 1000;
 
-export const LOGO_URL = "/subset-logo-transparent.png";
-export const ZEN_TEMPLE_URL = "/zen-temple.png";
-export const ZEN_TEMPLE_LARGE_URL = "/zen-temple-larger.png";
+export const LOGO_URL = "/subset-logo-transparent.webp";
+export const ZEN_TEMPLE_URL = "/zen-temple.webp";
+export const ZEN_TEMPLE_LARGE_URL = "/zen-temple-larger.webp";
 
 export const LOREM_EPSUM =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";

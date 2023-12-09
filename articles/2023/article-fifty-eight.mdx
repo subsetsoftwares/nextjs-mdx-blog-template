@@ -1,79 +1,37 @@
 ---
 title: Here is the title of article  fifty eight
 summary: Here is the summary of article fifty eight giving a gimplse of the article
-publishedDate: 15/11/2023
-tags: scripting, scripting, jest, tailwind, frontend
+publishedDate: 20/08/2023
+tags: frontend, jest, reactjs
 ---
 
-The scenic lands of Canada featuring maple leaves, snow-capped mountains, turquoise lakes and Toronto. Take in the sights in this photo gallery exhibition and see how easy it is to replicate with some MDX magic and tailwind classes.
+A sample post with markdown.
 
-Features images served using `next/image` component. The locally stored images are located in a folder with the following path: `/static/images/canada/[filename].jpg`
+## Inline Highlighting
 
-Since we are using mdx, we can create a simple responsive flexbox grid to display our images with a few tailwind css classes.
+Sample of inline highlighting `sum = parseInt(num1) + parseInt(num2)`
 
----
+## Code Blocks
 
-# Gallery
+Some Javascript code
 
-<div className="-mx-2 flex flex-wrap overflow-hidden xl:-mx-2">
-  <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
-    ![Maple](/static/images/canada/maple.jpg)
-  </div>
-  <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
-    ![Lake](/static/images/canada/lake.jpg)
-  </div>
-  <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
-    ![Mountains](/static/images/canada/mountains.jpg)
-  </div>
-  <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
-    ![Toronto](/static/images/canada/toronto.jpg)
-  </div>
-</div>
-
-# Implementation
-
-```js
-<div className="-mx-2 flex flex-wrap overflow-hidden xl:-mx-2">
-  <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
-    ![Maple](/static/images/canada/maple.jpg)
-  </div>
-  <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
-    ![Lake](/static/images/canada/lake.jpg)
-  </div>
-  <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
-    ![Mountains](/static/images/canada/mountains.jpg)
-  </div>
-  <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
-    ![Toronto](/static/images/canada/toronto.jpg)
-  </div>
-</div>
+```javascript
+var num1, num2, sum;
+num1 = prompt("Enter first number");
+num2 = prompt("Enter second number");
+sum = parseInt(num1) + parseInt(num2); // "+" means "add"
+alert("Sum = " + sum); // "+" means combine into a string
 ```
 
-With MDX v2, one can interleave markdown in jsx as shown in the example code.
+Some Python code 🐍
 
-### Photo Credits
+```python
+def fib():
+    a, b = 0, 1
+    while True:            # First iteration:
+        yield a            # yield 0 to start with and then
+        a, b = b, a + b    # a will now be 1, and b will also be 1, (0 + 1)
 
-<div>
-  Maple photo by [Guillaume
-  Jaillet](https://unsplash.com/@i_am_g?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
-  on
-  [Unsplash](https://unsplash.com/s/photos/canada?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
-</div>
-<div>
-  Mountains photo by [John
-  Lee](https://unsplash.com/@john_artifexfilms?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
-  on
-  [Unsplash](https://unsplash.com/s/photos/canada?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
-</div>
-<div>
-  Lake photo by [Tj
-  Holowaychuk](https://unsplash.com/@tjholowaychuk?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
-  on
-  [Unsplash](https://unsplash.com/s/photos/canada?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
-</div>
-<div>
-  Toronto photo by [Matthew
-  Henry](https://unsplash.com/@matthewhenry?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
-  on
-  [Unsplash](https://unsplash.com/s/photos/canada?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
-</div>
+for index, fibonacci_number in zip(range(10), fib()):
+     print('{i:3}: {f:3}'.format(i=index, f=fibonacci_number))
+```

@@ -146,7 +146,7 @@ a {
 
   pre {
     background-color: var(--background-color-gray-900);
-    background-image: url(/action-buttons.png);
+    background-image: url(/action-buttons.webp);
     border-radius: 12px;
     background-repeat: no-repeat;
     background-size: calc(var(--base-spacing) * 3);
@@ -192,9 +192,7 @@ a {
     border: 1px solid #000;
   }
 
-  @media (max-width: 550px) {
-    img {
-      width: 100%;
-    }
+  img {
+    max-width: 100%;
   }
 }
