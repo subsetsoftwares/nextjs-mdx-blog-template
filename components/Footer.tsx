@@ -6,7 +6,7 @@ import styles from "./Footer.module.scss";
 
 const Footer: React.FC = () => {
   return (
-    <div className={styles["footer"]}>
+    <footer className={styles["footer"]}>
       <div className={styles["section"]}>
         <h2 className={styles["gray-tagline"]}>{QUOTE_KNOWLEDGE_SHARING}</h2>
       </div>
@@ -27,7 +27,7 @@ const Footer: React.FC = () => {
           in India
         </p>
       </div>
-    </div>
+    </footer>
   );
 };
 

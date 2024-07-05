@@ -1,4 +1,4 @@
-import { LOGO_URL } from "@/utility/constants";
+import { LOGO_URL, SITE_TITLE } from "@/utility/constants";
 import { PAGE_ABOUT, PAGE_ARTICLES_INDEX, PAGE_HOME } from "@/utility/urls";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,7 +7,7 @@ import styles from "./Header.module.scss";
 
 const Header: React.FC = () => {
   return (
-    <div className={styles["header"]}>
+    <header className={styles["header"]}>
       <div className={styles["logo"]}>
         <Link href={PAGE_HOME} className={styles["logo-container"]}>
           <Image
@@ -17,7 +17,7 @@ const Header: React.FC = () => {
             width={44}
             height={44}
           />
-          <h1 className={styles["title"]}>Subset Softwares</h1>
+          <h1 className={styles["title"]}>{SITE_TITLE}</h1>
         </Link>
       </div>
 
@@ -29,7 +29,7 @@ const Header: React.FC = () => {
           About
         </Link>
       </div>
-    </div>
+    </header>
   );
 };
 
