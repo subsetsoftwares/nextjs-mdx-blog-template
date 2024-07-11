@@ -4,8 +4,8 @@ export const TOP_TAGS_LIMIT = 14;
 export const DEFAULT_PAGE_LIMIT = 10;
 export const MAX_PAGES = 1000;
 
-export const SITE_TITLE = "Bisht Bytes";
-export const LOGO_URL = "/bishtbytes-color-logo-transparent.webp";
+export const SITE_TITLE = "Subset Softwares";
+export const LOGO_URL = "/subset-logo-transparent.webp";
 export const ZEN_TEMPLE_URL = "/zen-temple.webp";
 export const ZEN_TEMPLE_LARGE_URL = "/zen-temple-larger.webp";
 
