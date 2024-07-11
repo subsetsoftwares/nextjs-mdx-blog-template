@@ -1,37 +1,36 @@
 import clsx from "clsx";
 import Link from "next/link";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
 import styles from "./Pagination.module.scss";
 
 interface Props {
+  pageNumber: number;
   totalPages: number;
   getNavigationLink: (page: number) => string;
 }
 
-export default function Pagination({ totalPages, getNavigationLink }: Props) {
-  const router = useRouter();
-  const [currentPage, setCurrentPage] = useState<number>(1);
-
-  useEffect(() => {
-    const pageParam = Number(router.query.page) || 1;
-    setCurrentPage(pageParam);
-  }, [router.query.page]);
-
+export default function Pagination({
+  pageNumber,
+  totalPages,
+  getNavigationLink,
+}: Props) {
   return (
     <div className={styles["pagination"]}>
       <Link
-        href={getNavigationLink(currentPage - 1)}
-        className={clsx("button", "previous", currentPage === 1 && "disabled")}
+        href={getNavigationLink(pageNumber - 1)}
+        className={clsx(
+          styles["button"],
+          "previous",
+          pageNumber === 1 && styles["disabled"]
+        )}
       >
         &lt; Previous
       </Link>
       <Link
-        href={getNavigationLink(currentPage + 1)}
+        href={getNavigationLink(pageNumber + 1)}
         className={clsx(
-          "button",
+          styles["button"],
           "upcoming",
-          currentPage === totalPages && "disabled"
+          pageNumber === totalPages && styles["disabled"]
         )}
       >
         Next &gt;

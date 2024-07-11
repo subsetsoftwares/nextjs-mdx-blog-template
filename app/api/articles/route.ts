@@ -1,7 +1,10 @@
+import { generateStaticParams } from "@/app/(application)/articles/[page]/page";
 import { getArticles } from "@/helpers/getArticles";
 import { ArticlesPageResult } from "@/types/article";
 import { ARTICLES_DIRECTORY } from "@/utility/constants";
 import { type NextRequest } from "next/server";
+
+export { generateStaticParams };
 
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;

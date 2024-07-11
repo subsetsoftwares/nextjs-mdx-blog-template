@@ -3,10 +3,8 @@ import RenderArticle from "@/components/RenderArticle";
 import { Article, ArticlesPageResult } from "@/types/article";
 import { DEFAULT_PAGE_LIMIT, MAX_PAGES } from "@/utility/constants";
 import { API_ARTICLE, API_ARTICLES_ALL } from "@/utility/urls";
-import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
-import React from "react";
 
-export async function getStaticPaths() {
+export async function generateStaticParams() {
   let page = 1;
   let hasMoreArticles = true;
   const paths = [];
@@ -18,11 +16,7 @@ export async function getStaticPaths() {
     const articlesPageResult: ArticlesPageResult = await pageResponse.json();
     const { articles, totalPages } = articlesPageResult;
 
-    paths.push(
-      ...articles.map((article: Article) => ({
-        params: { slug: article.slug },
-      }))
-    );
+    paths.push(...articles.map((article: Article) => ({ slug: article.slug })));
 
     // Check if there are more articles
     hasMoreArticles = !(page === totalPages);
@@ -35,18 +29,10 @@ export async function getStaticPaths() {
     page++;
   }
 
-  return { paths, fallback: false };
+  return paths;
 }
 
-export async function getStaticProps(context: GetStaticPropsContext) {
-  const { params } = context;
-
-  if (!params || typeof params.slug !== "string") {
-    return {
-      notFound: true,
-    };
-  }
-
+export async function getData(params: any) {
   const { slug } = params;
   const apiUrl = API_ARTICLE(slug);
 
@@ -54,22 +40,16 @@ export async function getStaticProps(context: GetStaticPropsContext) {
   const data = await response.json();
   const article: Article = data.article;
 
-  return {
-    props: {
-      article,
-    },
-  };
+  return article;
 }
 
-const Home: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
-  article,
-}) => {
+export default async function ArticlePage({ params }: any) {
+  const article = await getData(params);
+
   return (
     <>
       <Head />
       <RenderArticle article={article} />
     </>
   );
-};
-
-export default Home;
+}

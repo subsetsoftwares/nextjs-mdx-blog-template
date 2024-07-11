@@ -9,10 +9,8 @@ import {
   ZEN_TEMPLE_LARGE_URL,
 } from "@/utility/constants";
 import { API_ARTICLES_RECENT, API_TAGS_POPULAR } from "@/utility/urls";
-import { InferGetStaticPropsType } from "next";
-import React from "react";
 
-export async function getStaticProps() {
+export async function getPageData() {
   const recentArticlesRes = await fetch(API_ARTICLES_RECENT);
   const recentArticles = await recentArticlesRes.json();
 
@@ -20,17 +18,13 @@ export async function getStaticProps() {
   const popularTags = await popularRes.json();
 
   return {
-    props: {
-      articles: { recent: recentArticles.recent },
-      tags: { popular: popularTags.popular },
-    },
+    articles: { recent: recentArticles.recent },
+    tags: { popular: popularTags.popular },
   };
 }
 
-const Home: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
-  articles,
-  tags,
-}) => {
+export default async function Page() {
+  const { articles, tags } = await getPageData();
   return (
     <>
       <Head />
@@ -40,6 +34,4 @@ const Home: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
       <BigBlock quote={QUOTE_SOLVE} subtitle={QUOTE_SOLVE_SUBTITLE} />
     </>
   );
-};
-
-export default Home;
+}

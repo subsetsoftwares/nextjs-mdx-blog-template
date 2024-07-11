@@ -4,43 +4,27 @@ import Pagination from "@/components/Pagination";
 import { ArticlesPageResult } from "@/types/article";
 import { DEFAULT_PAGE_LIMIT } from "@/utility/constants";
 import { API_ARTICLES_ALL } from "@/utility/urls";
-import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
-import React from "react";
 
-export async function getStaticPaths() {
+export async function generateStaticParams() {
   const response = await fetch(API_ARTICLES_ALL);
   const { totalPages } = await response.json();
   const paths = Array.from({ length: totalPages }, (_, index) => ({
-    params: { page: (index + 1).toString() },
+    page: (index + 1).toString(),
   }));
 
-  return { paths, fallback: false };
+  return paths;
 }
 
-export async function getStaticProps(context: GetStaticPropsContext) {
-  const { params } = context;
-
-  if (!params || typeof params.page !== "string") {
-    return {
-      notFound: true,
-    };
-  }
-
+export async function getData(params: any) {
   const { page } = params;
   const apiUrl = `${API_ARTICLES_ALL}?page=${page}&limit=${DEFAULT_PAGE_LIMIT}`;
   const response = await fetch(apiUrl);
   const articlesPageResult: ArticlesPageResult = await response.json();
-
-  return {
-    props: {
-      articlesPageResult,
-    },
-  };
+  return articlesPageResult;
 }
 
-const Home: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
-  articlesPageResult,
-}) => {
+export default async function ArticlesPage({ params }: any) {
+  const articlesPageResult = await getData(params);
   const getNavigationLink = (page: number) => {
     return `/articles/${page}`;
   };
@@ -54,11 +38,10 @@ const Home: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
         pageNumber={articlesPageResult.page}
       />
       <Pagination
+        pageNumber={parseInt(params.page)}
         totalPages={articlesPageResult.totalPages}
         getNavigationLink={getNavigationLink}
       />
     </>
   );
-};
-
-export default Home;
+}

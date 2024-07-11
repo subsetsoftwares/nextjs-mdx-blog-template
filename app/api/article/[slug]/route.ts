@@ -1,5 +1,8 @@
+import { generateStaticParams } from "@/app/(application)/article/[slug]/page";
 import { getArticles } from "@/helpers/getArticles";
 import { ARTICLES_DIRECTORY } from "@/utility/constants";
+
+export { generateStaticParams };
 
 export async function GET(
   request: Request,
