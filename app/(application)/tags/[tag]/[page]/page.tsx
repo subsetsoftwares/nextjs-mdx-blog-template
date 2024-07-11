@@ -4,7 +4,7 @@ import Pagination from "@/components/Pagination";
 import { ArticlesPageResult } from "@/types/article";
 import { DEFAULT_PAGE_LIMIT } from "@/utility/constants";
 import { API_TAG } from "@/utility/urls";
-import { generateStaticParams } from "./generate";
+import { generateStaticParams } from "../../../../api/tag/[tag]/generate";
 
 export { generateStaticParams };
 
@@ -20,11 +20,9 @@ export default async function ArticlesPage(props: {
   params: { tag: string; page: string };
   searchParams: { [key: string]: string | string[] | undefined };
 }) {
-  console.log(props);
-  const { params, searchParams } = props;
+  const { params } = props;
+  const tag = params.tag;
   const articlesPageResult = await getData(params);
-  // TODO fix this
-  const tag = "";
 
   const getNavigationLink = (page: number) => {
     return `/tags/${tag}/${page}`;
@@ -40,6 +38,7 @@ export default async function ArticlesPage(props: {
         pageNumber={articlesPageResult.page}
       />
       <Pagination
+        pageNumber={parseInt(params.page)}
         totalPages={articlesPageResult.totalPages}
         getNavigationLink={getNavigationLink}
       />

@@ -38,6 +38,7 @@ export default async function ArticlesPage({ params }: any) {
         pageNumber={articlesPageResult.page}
       />
       <Pagination
+        pageNumber={parseInt(params.page)}
         totalPages={articlesPageResult.totalPages}
         getNavigationLink={getNavigationLink}
       />

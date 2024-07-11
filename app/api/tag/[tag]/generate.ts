@@ -1,7 +1,8 @@
+import { getTagPageData } from "@/app/api/tag/[tag]/helper";
 import { ArticlesPageResult } from "@/types/article";
 import { TagCount } from "@/types/tag";
 import { DEFAULT_PAGE_LIMIT } from "@/utility/constants";
-import { API_TAG, API_TAGS_ALL } from "@/utility/urls";
+import { API_TAGS_ALL } from "@/utility/urls";
 
 type Path = { tag: string; page: string };
 
@@ -13,9 +14,8 @@ export async function generateStaticParams() {
 
   // get all pages for a tag
   for (const { tag } of tags) {
-    const apiUrl = `${API_TAG}/${tag}?page=1&limit=${DEFAULT_PAGE_LIMIT}`;
-    const response = await fetch(apiUrl);
-    const articlesPageResult: ArticlesPageResult = await response.json();
+    const data = await getTagPageData(tag, 1, DEFAULT_PAGE_LIMIT);
+    const articlesPageResult: ArticlesPageResult = data;
     const totalPages = articlesPageResult.totalPages;
     const tagPaths = Array.from({ length: totalPages }, (_, index) => ({
       tag,
